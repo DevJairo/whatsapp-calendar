@@ -18,10 +18,10 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    SharedModule,
     CustomersModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
