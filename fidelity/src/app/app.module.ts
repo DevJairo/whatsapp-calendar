@@ -1,8 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { environment } from 'src/environments/environment';
 
-import { AppComponent } from './app.component';
+// Own Modules
+// import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared/shared.module';
+import { CustomersModule } from './customers/customers.module';
+
+// Components
+import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
@@ -10,6 +18,9 @@ import { SharedModule } from './shared/shared.module';
   ],
   imports: [
     BrowserModule,
+    CustomersModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
     SharedModule
   ],
   providers: [],
