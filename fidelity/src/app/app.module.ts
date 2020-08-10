@@ -8,6 +8,7 @@ import { environment } from 'src/environments/environment';
 // import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared/shared.module';
 import { CustomersModule } from './customers/customers.module';
+import { DashboardModule } from './dashboard/dashboard.module';
 
 // Components
 import { AppComponent } from './app.component';
@@ -21,9 +22,11 @@ import { AppComponent } from './app.component';
     CustomersModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
-    SharedModule
+    SharedModule,
+    DashboardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
