@@ -1,0 +1,17 @@
+.content-view {
+    background: #fff0f6;
+    height: calc(100% - 69px);
+    display: block;
+    width: calc(100% - 239px);
+    margin-left: 239px;
+    position: relative;
+}
+
+@media only screen and (max-width: 600px) {
+    .content-view {
+        width: auto;
+        margin: 0;
+        height: 100%;
+        padding: 0 20px;
+    }
+}

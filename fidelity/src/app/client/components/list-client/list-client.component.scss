@@ -1,0 +1,52 @@
+@import "../../../../styles.scss";
+.list-client {
+  .container {
+    max-width: 1000px;
+    margin: auto;
+    padding-top: 20px;
+    .card {
+      background: $base;
+      padding: 30px;
+      border-radius: 15px;
+      h1 {
+        margin-bottom: 5px;
+      }
+    }
+    .content-list {
+      padding-top: 30px;
+      .add-content {
+        i {
+          &.plus {
+            background-image: url("/assets/plus.png");
+            background-size: 14px;
+            background-position: center;
+          }
+        }
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        padding: 0 0 0 35px;
+        align-items: center;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 600px) {
+  .list-client {
+      .content-list {
+        .add-content {
+          flex-direction: column;
+          padding: 0 !important;
+          h1 {
+            margin-bottom: 20px;
+          }
+          .btn {
+            background: #EB136D;
+            width: 100%;
+            padding: 10px 0;
+            justify-content: center;        
+          }
+        }
+      }
+  }
+}

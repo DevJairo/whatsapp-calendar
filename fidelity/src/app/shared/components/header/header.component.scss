@@ -1,0 +1,24 @@
+@import '../../../../styles.scss';
+.header {
+    display: block;
+    padding: 25px;
+    background: $base;
+    color: $secundary;
+    font-weight: 600;
+    text-align: right;
+}
+@media only screen and (max-width: 600px) {
+    .header {
+        background: $gradual-h;
+        display: flex;
+        justify-content: space-between;
+        i.navbtn {
+            height: 18px;
+            width: 29px;
+            background-image: url('/assets/nav.png');
+        }
+        p {
+            color: $base
+        }
+    }
+  }

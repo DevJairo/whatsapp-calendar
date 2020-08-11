@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -6,10 +6,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-
+  @Input() active: Boolean
+  @Output() showNav = new EventEmitter();
   constructor() { }
-
+  viewNav() {
+    this.active = !this.active
+    this.showNav.emit(this.active);
+  }
   ngOnInit(): void {
   }
+
+  // viewNav(){
+  //   this.active = !this.active
+  //   console.log(this.active)
+  // }
 
 }
