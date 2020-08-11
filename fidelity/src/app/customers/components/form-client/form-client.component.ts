@@ -1,18 +1,41 @@
 import { Component, OnInit } from '@angular/core';
 // import {Location} from '@angular/common';
 
+// Services
+import { CustomersManagerService } from '../../services/customers-manager.service';
+
+// Models
+import { ICustomer } from '../../models/customer.interface';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-form-client',
   templateUrl: './form-client.component.html',
   styleUrls: ['./form-client.component.scss']
 })
 export class FormClientComponent implements OnInit {
+  name: string;
+  phone: string;
+  estado: string;
+  loading: boolean = false;
 
-  constructor() { }
+  constructor(private customersManagerService: CustomersManagerService,
+    private router: Router) { }
 
   ngOnInit(): void {
   }
-  // backClicked() {
-  //   this._location.back()
-  // }
+
+  onSubmit() {
+    const newIndex = this.customersManagerService.customerList$.getValue().length;
+
+    const newCustomer: ICustomer = {
+      name: this.name,
+      phone: this.phone,
+      estado: 'cliente exporadico',
+      id: newIndex,
+    };
+    console.log({newCustomer});
+    this.customersManagerService.addNewCustomer(newCustomer);
+    this.router.navigate(['customers']);
+  }
 }
