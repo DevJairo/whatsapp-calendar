@@ -7,18 +7,18 @@
     <p>Carla Benavides</p>
     <a href="#">Editar Perfil</a>
   </div>
-  <ul class="nav">
+  <ul class="nav"> 
     <li>
       <a href="#">
         <i class="dashboard"></i>
         Dashboard</a>
     </li>
-    <li class="active">
+    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
       <a [routerLink]="['/']">
         <i class="cliente"></i>
         Clientes</a>
     </li>
-    <li>
+    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
       <a [routerLink]="['/add']">
         <i class="plus"></i>
         Agregar nuevo cliente
