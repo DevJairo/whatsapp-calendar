@@ -1,7 +1,11 @@
 export interface ICustomer {
-    $key?: string; //Angular necesita este campo.
-    id: number;
+    id?: string;
     name: string;
     phone: string;
     estado: string;
+}
+
+export interface ICustomerData {
+    id: string;
+    data: ICustomer;
 }

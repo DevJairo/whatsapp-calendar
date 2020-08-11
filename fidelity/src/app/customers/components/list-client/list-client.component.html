@@ -26,7 +26,10 @@
                         <td>{{ customer.name }}</td>
                         <td>{{ customer.phone }}</td>
                         <td>{{ customer.estado }}</td>
-                        <td></td>
+                        <td>
+                            <a [routerLink]="['/edit', customer.id]" class="mt-3 pl-3" >Editar</a>
+                            <a (click)="deleteCustomer(customer.id)" class="mt-3 pl-3" >Delete</a>
+                        </td>
                       </tr>
                     </tbody>
                   </nz-table>

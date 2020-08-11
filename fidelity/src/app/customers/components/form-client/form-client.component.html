@@ -10,14 +10,25 @@
                 <a (click)="onSubmit()" class="btn secundary"> Guardar </a>
             </div>
             <div class="card">
+
+
                 <form action="" class="inline two" >
                     <div class="form-control">
+                        <label for="">Customer ID</label>
+                        <input type="text"
+                         [(ngModel)]="customer.id"
+                        name="id" 
+                        disabled="disabled"
+                        placeholder="Customer ID">
+                        <small>Este campo es autogenerado</small>
+                    </div>
+                    <div class="form-control">
                         <label for="">Nombre completo</label>
-                        <input type="text" [(ngModel)]="name" name="name">
+                        <input type="text" [(ngModel)]="customer.name" name="name">
                     </div>
                     <div class="form-control">
                         <label for="">Celular</label>
-                        <input type="text" [(ngModel)]="phone" name="phone">
+                        <input type="text" [(ngModel)]="customer.phone" name="phone">
                     </div>
                 </form>
             </div>

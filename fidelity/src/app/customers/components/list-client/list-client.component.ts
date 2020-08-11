@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 // Models
-import { ICustomer } from '../../models/customer.interface';
+import { ICustomer, ICustomerData } from '../../models/customer.interface';
 
 // Services
 import { CustomersManagerService } from '../../services/customers-manager.service';
@@ -17,9 +17,13 @@ export class ListClientComponent implements OnInit {
   customerList$ = new BehaviorSubject<ICustomer[]>([]);
  
   constructor(private customersManagerService: CustomersManagerService) {
-    customersManagerService.customerList$.subscribe((customers: ICustomer[]) => {
+    customersManagerService.customers.subscribe((customers: ICustomer[]) => {
       this.customerList$.next(customers);
     });
+   }
+
+   deleteCustomer (customerId: string) {
+    this.customersManagerService.removeCustomer(customerId);
    }
 
   ngOnInit(): void {

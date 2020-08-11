@@ -1,44 +1,54 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 // Models
-import { ICustomer } from '../models/customer.interface';
+import {ICustomer } from '../models/customer.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CustomersManagerService {
-  customerList$ = new BehaviorSubject<Array<ICustomer>>([]);
+  customersCollection: AngularFirestoreCollection;
+  customers: Observable<ICustomer[]>;
 
   constructor(private fireStore: AngularFirestore) {
-    fireStore
-      .collection('customers')
-      .valueChanges()
-      .subscribe((customers: Array<ICustomer>) => {
-        console.log(customers);
-        this.customerList$.next(customers);
-      });
+    this.customersCollection = fireStore.collection('customers');
+    this.customers = this.customersCollection.snapshotChanges().pipe(map(
+      actions => {
+        return actions.map (a => {
+          const data = a.payload.doc.data() as ICustomer;
+          const id = a.payload.doc.id;
+          return { id, ...data };
+        })
+      }
+    ));
    }
 
-   addNewCustomer(newCustomer: ICustomer) {
-    this.fireStore.collection('customers').add(newCustomer);
+  getCustomers(){
+  return this.customers;
   }
 
-  removeCustomer(indexPosition: string) {
-    this.fireStore.collection('customers').doc(indexPosition).delete();
+  getCustomer(id:string){
+    return this.customersCollection.doc<ICustomer>(id).valueChanges();
   }
 
-  getCustomerByPosition(indexPosition: number) {
-    return this.customerList$.getValue()[indexPosition];
+  updateCustomer(customer: ICustomer, id: string){
+    return this.customersCollection.doc(id).update(customer);
   }
 
-  getCustomerByName(name: string) {
-    this.fireStore
-      .collection('customers', (ref) => ref.where('name', '==', name + '\uf8ff'))
-      .valueChanges()
-      .subscribe((customers: ICustomer[]) => {
-        this.customerList$.next(customers);
-      });
+  removeCustomer(id: string){
+    return this.customersCollection.doc(id).delete();
   }
+
+  addNewCustomer(customer: ICustomer){
+    return this.customersCollection.add(customer).then( (docRef) => {
+      let completeCustomer: ICustomer = {
+        ...customer, id: docRef.id
+      };
+      this.updateCustomer(completeCustomer, docRef.id);
+  });
+  }
+ 
 }
