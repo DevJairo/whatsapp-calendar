@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
+import { AppRoutingModule } from '../app-routing.module';
 
 
 
@@ -12,7 +13,8 @@ import { NzLayoutModule } from 'ng-zorro-antd/layout';
   imports: [
     CommonModule,
     NzButtonModule,
-    NzLayoutModule
+    NzLayoutModule,
+    AppRoutingModule
   ]
 })
 export class DashboardModule { 
