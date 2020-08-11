@@ -5,15 +5,25 @@ import { FormsModule } from '@angular/forms';
 
 // Modules
 import { SharedModule } from '../shared/shared.module';
-// import { AppRoutingModule } from '../app-routing.module';
+import { AppRoutingModule } from '../app-routing.module';
 
 // Components
+import { FormClientComponent } from './components/form-client/form-client.component';
+import { ListClientComponent } from './components/list-client/list-client.component';
 
 // Share components
 
 @NgModule({
-  declarations: [],
-  imports: [CommonModule, SharedModule, FormsModule],
-  exports: [],
+  declarations: [ListClientComponent, FormClientComponent],
+  imports: [
+    CommonModule,
+    SharedModule,
+    FormsModule,
+    CommonModule,
+    AppRoutingModule
+  ],
+  exports: [ListClientComponent, FormClientComponent],
 })
 export class CustomersModule {}
+
+

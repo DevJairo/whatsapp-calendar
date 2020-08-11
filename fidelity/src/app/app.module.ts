@@ -6,8 +6,6 @@ import { environment } from 'src/environments/environment';
 
 // Own Modules
 import { SharedModule } from './shared/shared.module';
-
-import { ClienteModule } from './client/cliente.module';
 import { AppRoutingModule } from './app-routing.module';
 
 import { CustomersModule } from './customers/customers.module';
@@ -18,7 +16,6 @@ import { DashboardModule } from './dashboard/dashboard.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NZ_I18N } from 'ng-zorro-antd/i18n';
 import { en_US } from 'ng-zorro-antd/i18n';
 import { registerLocaleData } from '@angular/common';
@@ -34,7 +31,6 @@ registerLocaleData(en);
     BrowserModule,
     BrowserAnimationsModule,
     SharedModule,
-    ClienteModule,
     AppRoutingModule,
     CustomersModule,
     AngularFireModule.initializeApp(environment.firebase),
