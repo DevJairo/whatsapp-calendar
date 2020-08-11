@@ -9,8 +9,8 @@ import { DashboardComponent } from './dashboard/components/dashboard/dashboard.c
 const routes: Routes = [
   { path: '', component: DashboardComponent },
   { path: 'customers', component: ListClientComponent },
-  { path: 'add', component: FormClientComponent },
-  { path: 'edit/:id', component: FormClientComponent },
+  { path: 'customer/add', component: FormClientComponent },
+  { path: 'customer/edit/:id', component: FormClientComponent },
 ]
 
 

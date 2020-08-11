@@ -20,6 +20,7 @@ export class ListClientComponent implements OnInit {
     customersManagerService.customers.subscribe((customers: ICustomer[]) => {
       this.customerList$.next(customers);
     });
+    console.log(this.customerList$)
    }
 
    deleteCustomer (customerId: string) {
