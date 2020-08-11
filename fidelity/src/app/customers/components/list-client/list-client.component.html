@@ -22,42 +22,14 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr *ngFor="let data of basicTable.data">
-                        <td>{{ data.name }}</td>
-                        <td>{{ data.age }}</td>
-                        <td>{{ data.address }}</td>
-                        <td>
-                          <a>Action 一 {{ data.name }}</a>
-                          <nz-divider nzType="vertical"></nz-divider>
-                          <a>Delete</a>
-                        </td>
+                      <tr *ngFor="let customer of customerList$ | async">
+                        <td>{{ customer.name }}</td>
+                        <td>{{ customer.phone }}</td>
+                        <td>{{ customer.estado }}</td>
+                        <td></td>
                       </tr>
                     </tbody>
                   </nz-table>
-                <!-- <table>
-                    <thead>
-                        <tr>
-                            <th>Nombres</th>
-                            <th>Apellidos</th>
-                            <th>Celular</th>
-                            <th>Estado</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Jairo Alberto</td>
-                            <td>Machuca Cóndor</td>
-                            <td>963428491</td>
-                            <td>Fidelizado</td>
-                        </tr>
-                        <tr>
-                            <td>Jairo Alberto</td>
-                            <td>Machuca Cóndor</td>
-                            <td>963428491</td>
-                            <td>Fidelizado</td>
-                        </tr>
-                    </tbody>
-                </table> -->
             </div>
         </div>
     </div>

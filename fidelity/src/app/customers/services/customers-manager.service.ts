@@ -15,8 +15,9 @@ export class CustomersManagerService {
     fireStore
       .collection('customers')
       .valueChanges()
-      .subscribe((books: Array<IBook>) => {
-        this.customerList$.next(books);
+      .subscribe((customers: Array<ICustomer>) => {
+        console.log(customers);
+        this.customerList$.next(customers);
       });
    }
 

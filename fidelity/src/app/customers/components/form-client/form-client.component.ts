@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-// import {Location} from '@angular/common';
+import { Router } from '@angular/router';
 
 // Services
 import { CustomersManagerService } from '../../services/customers-manager.service';
 
 // Models
 import { ICustomer } from '../../models/customer.interface';
-import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-form-client',
