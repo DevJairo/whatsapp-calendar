@@ -16,6 +16,7 @@
         display: flex;
         justify-content: space-between;
         i.navbtn {
+            display: inline-block;
             height: 18px;
             width: 29px;
             background-image: url('/assets/nav.png');
