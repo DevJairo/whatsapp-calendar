@@ -1,0 +1,102 @@
+@import "../../../../styles.scss";
+.form-client {
+    .container {
+        max-width: 1000px;
+        margin: auto;
+        padding-top: 20px;
+        .card {
+            background: $base;
+            padding: 30px;
+            border-radius: 15px;
+            h1 {
+                margin-bottom: 5px;
+            }
+        }
+        .content-form {
+            padding-top: 30px;
+            .add-content {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 20px;
+                align-items: center;
+                .back {
+                    i {
+                        background-image: url("/assets/arrow-left.png");
+                        height: 30px;
+                        width: 30px;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                    }
+                    color: $primary;
+                    display: flex;
+                    align-items: center;
+                    font-size: 16px;
+                }
+            }
+            form {
+                &.inline {
+                    &.two {
+                        display: flex;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                        width: 100%;
+                        .form-control {
+                            width: calc(50% - 20px);
+                            margin: 0 10px 25px;
+                        }
+                    }
+                    .form-control {
+                        display: flex;
+                        flex-direction: column;
+                        margin-bottom: 25px;
+                        label {
+                            margin-bottom: 10px;
+                        }
+                        input {
+                            height: 40px;
+                            border-radius: 20px;
+                            color: #000;
+                            border: solid 1px #ababab;
+                            font-size: 16px;
+                            font-weight: 600;
+                            outline: none;
+                            padding-left: 18px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .form-client {
+        .container {
+            .content-form {
+                padding-top: 0px;
+                .add-content {
+                    flex-direction: column;
+                    align-items: normal;
+                    h1 {
+                        margin: 20px 0;
+                        text-align: center;
+                    }
+                    .btn {
+                        padding: 13px 0;
+                        justify-content: center;   
+                    }
+                }
+                form{
+                    &.inline {
+                        &.two {
+                            .form-control {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+  }

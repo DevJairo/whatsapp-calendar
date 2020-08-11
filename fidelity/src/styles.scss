@@ -5,5 +5,65 @@
 }
 html, body {
     height: 100%;
+    font-size: 14px;
     font-family: 'Montserrat', sans-serif;
+}
+/*color variables*/
+$primary: #EB136D;
+$secundary: #3D086C;
+$base: #fff;
+
+$gradual-v: linear-gradient(180deg, rgba(235,19,109,1) 0%, rgba(61,8,108,1) 100%);
+$gradual-h: linear-gradient(90deg, rgba(235,19,109,1) 0%, rgba(61,8,108,1) 100%);
+@import "~element-angular/theme/index.css";
+
+.btn{
+    color: $base;
+    border-radius: 20px;
+    padding: 6px 15px;
+    outline: none;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    &.primary 
+    {
+       background: $primary;
+   }
+   &.secundary 
+    {
+       background: $secundary;
+   }
+}
+h1 {
+    font-size: 20px;
+    color: $primary;
+    &.secundary {
+        color: $secundary;
+    }
+}
+
+i{
+    height: 24px;
+    width: 24px;
+    margin-right: 10px;
+    background-size: cover;
+    display: inline-block;
+    background-repeat: no-repeat;
+}
+table {
+    text-align: left;
+    width: 100%;
+    thead {
+        th {
+            border-bottom: solid 1px #ddd;
+            padding-bottom: 10px;
+        }
+    }
+    tbody {
+        tr {
+            td {
+                padding: 10px 0px;
+            }
+        }
+    }
 }

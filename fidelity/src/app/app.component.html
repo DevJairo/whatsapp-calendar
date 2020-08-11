@@ -1,1 +1,5 @@
-<app-nav></app-nav>
+<app-nav [active]="active" (showNav)="active=$event"></app-nav>
+<app-header [active]="active" (showNav)="active=$event"></app-header>
+<div class="content-view">
+	<router-outlet></router-outlet>
+</div>
