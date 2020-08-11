@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzLayoutModule } from 'ng-zorro-antd/layout';
+import { AppRoutingModule } from '../app-routing.module';
 
 
 
@@ -8,7 +11,12 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
   declarations: [DashboardComponent],
   exports: [DashboardComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    NzButtonModule,
+    NzLayoutModule,
+    AppRoutingModule
   ]
 })
-export class DashboardModule { }
+export class DashboardModule { 
+  
+}

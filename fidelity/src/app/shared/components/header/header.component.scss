@@ -6,6 +6,9 @@
     color: $secundary;
     font-weight: 600;
     text-align: right;
+    i.navbtn {
+        display: none;
+    }
 }
 @media only screen and (max-width: 600px) {
     .header {

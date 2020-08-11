@@ -8,21 +8,20 @@
     <a href="#">Editar Perfil</a>
   </div>
   <ul class="nav"> 
-    <li>
-      <a href="#">
+    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+      <a [routerLink]="['/']">
         <i class="dashboard"></i>
         Dashboard</a>
     </li>
-    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+    <li>
+      <a href="#">
+        <i class="dashboard"></i>
+        Whatsapp Acount</a>
+    </li>
+    <li>
       <a [routerLink]="['/']">
         <i class="cliente"></i>
-        Clientes</a>
-    </li>
-    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-      <a [routerLink]="['/add']">
-        <i class="plus"></i>
-        Agregar nuevo cliente
-      </a>
+        Calendarios Asociados</a>
     </li>
     <li>
       <a href="#">
