@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 // Modules
 import { SharedModule } from '../shared/shared.module';
 import { AppRoutingModule } from '../app-routing.module';
+import { NzTableModule } from 'ng-zorro-antd/table';
 
 // Components
 import { FormClientComponent } from './components/form-client/form-client.component';
@@ -20,7 +21,8 @@ import { ListClientComponent } from './components/list-client/list-client.compon
     SharedModule,
     FormsModule,
     CommonModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NzTableModule
   ],
   exports: [ListClientComponent, FormClientComponent],
 })

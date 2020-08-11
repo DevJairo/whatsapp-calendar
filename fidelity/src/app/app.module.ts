@@ -22,6 +22,7 @@ import { NZ_I18N } from 'ng-zorro-antd/i18n';
 import { en_US } from 'ng-zorro-antd/i18n';
 import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
+import { DemoNgZorroAntdModule } from './ng-zorro-antd.module';
 
 registerLocaleData(en);
 
@@ -38,6 +39,7 @@ registerLocaleData(en);
     AngularFireDatabaseModule,
     SharedModule,
     DashboardModule,
+    DemoNgZorroAntdModule,
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule
