@@ -15,10 +15,4 @@ export class HeaderComponent implements OnInit {
   }
   ngOnInit(): void {
   }
-
-  // viewNav(){
-  //   this.active = !this.active
-  //   console.log(this.active)
-  // }
-
 }

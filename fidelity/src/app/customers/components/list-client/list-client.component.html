@@ -1,39 +1,55 @@
 <div class="list-client">
-    <div class="container">
-        <div class="card">
-            <h1>¡Bienvenida Carla!</h1>
-            <p>Aquí podras gestionar a tus clientes.</p>
-        </div>
-        <div class="content-list">
-            <div class="add-content">
-                <h1>Lista de Clientes</h1>
-                <a [routerLink]="['/customer/add']" class="btn primary">
-                    <i class="plus"></i>
-                    Agregar Cliente</a>
-            </div>
-            <div class="card">
-                <nz-table #basicTable>
-                    <thead>
-                      <tr>
-                        <th>Nombre completo</th>
-                        <th>Celular</th>
-                        <th>Estado</th>
-                        <th>Acciones</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr *ngFor="let customer of customerList$ | async">
-                        <td>{{ customer.name }}</td>
-                        <td>{{ customer.phone }}</td>
-                        <td>{{ customer.estado }}</td>
-                        <td>
-                            <a [routerLink]="['/customer/edit', customer.id]" class="mt-3 pl-3" >Editar</a>
-                            <a (click)="deleteCustomer(customer.id)" class="mt-3 pl-3" >Delete</a>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </nz-table>
-            </div>
-        </div>
+  <div class="container">
+    <div class="card">
+      <h1>¡Bienvenida Carla!</h1>
+      <p>Aquí podras gestionar a tus clientes.</p>
     </div>
+    <div class="content-list">
+      <div class="add-content">
+        <h1>Lista de Clientes</h1>
+        <a [routerLink]="['/customer/add']" class="btn primary">
+          <i class="plus"></i>
+          Agregar Cliente</a>
+      </div>
+      <div class="card card-table">
+        <ul>
+          <li *ngFor="let customer of customerList$ | async ; let i = index">
+            <a (click)="view(i)">
+              <p><b>Nombre completo: </b></p>
+              <p>{{ customer.name }}</p>
+            </a>
+            <ul *ngIf="i == viewItem">
+              <li>
+                <p><b>Celular: </b>{{ customer.phone }}</p>
+                <p><b>Estado: </b>{{ customer.estado }}</p>
+                <p><b>Acciones: </b> <a [routerLink]="['/customer/edit', customer.id]" class="btn btn-table">Editar</a>
+                  <a (click)="deleteCustomer(customer.id)" class="btn btn-table">Delete</a></p>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <table>
+          <thead>
+            <tr>
+              <th>Nombre completo</th>
+              <th>Celular</th>
+              <th>Estado</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let customer of customerList$ | async">
+              <td>{{ customer.name }}</td>
+              <td>{{ customer.phone }}</td>
+              <td>{{ customer.estado }}</td>
+              <td>
+                <a [routerLink]="['/customer/edit', customer.id]" class="btn btn-table">Editar</a>
+                <a (click)="deleteCustomer(customer.id)" class="btn btn-table">Delete</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 </div>

@@ -15,6 +15,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class ListClientComponent implements OnInit {
   customerList$ = new BehaviorSubject<ICustomer[]>([]);
+  viewItem: string
  
   constructor(private customersManagerService: CustomersManagerService) {
     customersManagerService.customers.subscribe((customers: ICustomer[]) => {
@@ -25,6 +26,9 @@ export class ListClientComponent implements OnInit {
 
    deleteCustomer (customerId: string) {
     this.customersManagerService.removeCustomer(customerId);
+   }
+   view(i: string){
+     this.viewItem = i
    }
 
   ngOnInit(): void {

@@ -1,5 +1,10 @@
 @import "../../../../styles.scss";
 .list-client {
+  .card-table {
+    & > ul {
+      display: none;
+    }
+  }
   .container {
     max-width: 1000px;
     margin: auto;
@@ -45,6 +50,45 @@
             width: 100%;
             padding: 10px 0;
             justify-content: center;        
+          }
+        }
+        table {
+          display: none;
+        }
+        .card-table {
+          padding: 0;
+          & > ul {
+            display: block;
+          }
+        }
+        ul {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          & > li {
+            padding: 20px;
+            border-top: solid 1px #ddd;
+            border-left: solid 1px #ddd;
+            border-right: solid 1px #ddd;
+            &:first-child {
+              border-radius: 20px 20px 0 0;
+            }
+            &:last-child{
+              border-bottom: solid 1px #ddd;
+              border-radius: 0 0 20px 20px;
+            }
+            a {
+              display: block;
+            }
+            > ul {
+              li {
+                border: none;
+                padding: 0;
+                .btn {
+                  display: inline-block;
+                }
+              }
+            }
           }
         }
       }

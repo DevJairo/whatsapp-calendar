@@ -31,6 +31,12 @@ $gradual-h: linear-gradient(90deg, rgba(235,19,109,1) 0%, rgba(61,8,108,1) 100%)
     {
        background: $secundary;
    }
+   &.btn-table {
+    background: #49b8c3;
+    display: inline-block;
+    margin-right: 10px;
+    padding: 2px 15px;
+   }
 }
 h1 {
     font-size: 20px;
@@ -48,10 +54,20 @@ i{
     display: inline-block;
     background-repeat: no-repeat;
 }
-
-// .ant-table {
-//     clear: none;
-// }
-// .ant-table-wrapper::after, .ant-table-wrapper::before {
-//     display: inline-block;
-// }
+table {
+    text-align: left;
+    width: 100%;
+    thead {
+        th {
+            border-bottom: solid 1px #ddd;
+            padding-bottom: 10px;
+        }
+    }
+    tbody {
+        tr {
+            td {
+                padding: 10px 0px;
+            }
+        }
+    }
+}
